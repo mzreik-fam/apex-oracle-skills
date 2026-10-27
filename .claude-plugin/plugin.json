@@ -1,0 +1,7 @@
+{
+  "name": "apex-oracle-skills",
+  "description": "Skills for building Oracle APEX apps and Oracle database code: safe APEXlang deploys, user-friendly UI/UX, PL/SQL packages and procedures, schema design, and an audit before release.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": ["oracle", "apex", "apexlang", "plsql", "sqlcl", "ux"]
+}

@@ -1,0 +1,73 @@
+{
+  "skill_name": "apex-oracle-skills",
+  "note": "Prompts to check the skills trigger and behave. Run each with and without the plugin and compare. Expectations are what a good answer must do.",
+  "evals": [
+    {
+      "id": 1,
+      "skill": "apex-dev",
+      "prompt": "I changed a page in the APEX app source and I want to push it to the dev workspace. Colleagues also edit headings in the browser. How do I deploy?",
+      "expectations": [
+        "exports the live app first and compares it with the source before importing",
+        "validates, then imports with set autocommit off from the SQLcl command line",
+        "passes the application name (not the connection name) to apex import -name",
+        "warns that private saved reports reset on import",
+        "checks the APEX and database version first"
+      ]
+    },
+    {
+      "id": 2,
+      "skill": "apex-dev",
+      "prompt": "I added a page item P7_VIEW and want to show the report region only when it is REPORT. I wrote `item: @P7_VIEW` in the server-side condition and the report never shows.",
+      "expectations": [
+        "explains that the @ makes the item name literal text",
+        "gives the fix: item: P7_VIEW without @",
+        "shows how to verify the stored condition in apex_application_page_regions"
+      ]
+    },
+    {
+      "id": 3,
+      "skill": "apex-ux",
+      "prompt": "My team says the new interactive grid page is confusing. It has columns like PROJECT_ID, DEV_ID_FK, PF_LOC_ID and everything is editable. What should I change?",
+      "expectations": [
+        "replaces ids with names or labelled lookups",
+        "uses plain headings",
+        "locks columns that should not be edited and makes that visible",
+        "suggests searchable lists of values and filters with counts",
+        "offers a short walk-through test with a new user"
+      ]
+    },
+    {
+      "id": 4,
+      "skill": "oracle-plsql",
+      "prompt": "Write a procedure that saves one row edited in an APEX grid: change the parent, but never let a location become its own parent or sit below itself.",
+      "expectations": [
+        "puts the logic in a package with a documented procedure",
+        "raises application errors with clear messages for the two rules",
+        "does not commit inside the procedure, or says so explicitly",
+        "includes audit columns and a runnable test"
+      ]
+    },
+    {
+      "id": 5,
+      "skill": "oracle-design",
+      "prompt": "We pull records from an external API every night and want to avoid duplicates. How many tables should we use and what should the key be?",
+      "expectations": [
+        "asks to look at real sample data first",
+        "proposes a composite natural key and explains it, with virtual columns for nullable parts",
+        "stores the raw payload and never silently drops records (side table with a reason, reconciliation)",
+        "keeps rules as data and uses normal numeric ids"
+      ]
+    },
+    {
+      "id": 6,
+      "skill": "apex-audit",
+      "prompt": "Please make sure the new inventory screens and the package behind them are built properly before we release on Sunday.",
+      "expectations": [
+        "exports the live app and runs the scripted checks",
+        "runs the schema checks and reads the page as a user",
+        "reports findings by severity with evidence and a one-line fix",
+        "states what was not checked"
+      ]
+    }
+  ]
+}

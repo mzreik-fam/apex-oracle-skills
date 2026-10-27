@@ -1,0 +1,11 @@
+{
+  "name": "apex-oracle-skills",
+  "owner": { "name": "apex-oracle-skills" },
+  "plugins": [
+    {
+      "name": "apex-oracle-skills",
+      "source": "./",
+      "description": "Oracle APEX and database skills: apex-dev, apex-ux, oracle-plsql, oracle-design, apex-audit."
+    }
+  ]
+}

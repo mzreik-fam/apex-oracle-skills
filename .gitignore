@@ -1,0 +1,7 @@
+.DS_Store
+# generated locally from each developer's own SQLcl install
+skills/apex-dev/references/apexlang-reference.md
+backups/
+*.har
+.env
+.env.*
