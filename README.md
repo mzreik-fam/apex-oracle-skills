@@ -2,6 +2,8 @@
 
 Skills that make an AI coding assistant a careful Oracle APEX and Oracle Database developer. They work with Claude Code, and the same Markdown files work in other assistants (Codex, Cursor, Copilot and others) that read `AGENTS.md` or a skills folder.
 
+> **Using an AI assistant? Just tell it:** *"Install https://github.com/mzreik-fam/apex-oracle-skills following INSTALL.md"*. The steps in `INSTALL.md` are written for the assistant, and it will report what it installed.
+
 ## What you get
 
 | Skill | Use it when |
