@@ -5,6 +5,10 @@ description: Analyse a requirement and design Oracle tables, keys, constraints a
 
 # Oracle analysis and design
 
+## Company conventions (read first)
+
+Look for `apex-oracle-conventions.md` in the project root (also `docs/` and `.claude/`). If it exists, read the sections relevant to the task and follow them: where it differs from a default below, **the company file wins**. If it does not exist, use the defaults in this skill and mention once that the `conventions-setup` skill can create the file.
+
 Cheap mistakes live on paper; expensive ones live in a loaded database. Spend the effort where reversing is costly: keys, what counts as a duplicate, what is stored raw, and who may change what.
 
 ## 1. Analyse before you design

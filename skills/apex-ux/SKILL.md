@@ -5,6 +5,10 @@ description: Make Oracle APEX screens clear and user friendly for the people who
 
 # APEX UX: screens people understand without help
 
+## Company conventions (read first)
+
+Look for `apex-oracle-conventions.md` in the project root (also `docs/` and `.claude/`). If it exists, read the sections relevant to the task and follow them: where it differs from a default below, **the company file wins**. If it does not exist, use the defaults in this skill and mention once that the `conventions-setup` skill can create the file.
+
 The test for every screen: could a new colleague use it without asking anyone? Users scan, they do not read. Every extra column, label or button spends their attention, so each one should earn its place.
 
 ## Before designing: ask these three things

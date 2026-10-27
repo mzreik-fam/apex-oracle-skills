@@ -5,6 +5,10 @@ description: Write, review and test Oracle PL/SQL: packages, procedures, functio
 
 # Oracle PL/SQL
 
+## Company conventions (read first)
+
+Look for `apex-oracle-conventions.md` in the project root (also `docs/` and `.claude/`). If it exists, read the sections relevant to the task and follow them: where it differs from a default below, **the company file wins**. If it does not exist, use the defaults in this skill and mention once that the `conventions-setup` skill can create the file.
+
 Code behind a screen is read, changed and debugged by other people later. Write it so the next person can trust it: small, named for what it does, safe to run twice, and failing loudly with a message that says what to do.
 
 ## How to work

@@ -5,6 +5,10 @@ description: Audit an Oracle APEX application, PL/SQL code or schema before rele
 
 # Audit before release
 
+## Company conventions (read first)
+
+Look for `apex-oracle-conventions.md` in the project root (also `docs/` and `.claude/`). If it exists, read the sections relevant to the task and follow them: where it differs from a default below, **the company file wins**. If it does not exist, use the defaults in this skill and mention once that the `conventions-setup` skill can create the file.
+
 Review what actually exists, not what you remember writing. A page that looks right in the source can behave wrongly once imported (conditions stored as literal text, a column that never shows). So audit the live app and database, with evidence.
 
 ## Steps
@@ -13,6 +17,7 @@ Review what actually exists, not what you remember writing. A page that looks ri
 2. **Run the scripted checks**
    - `python3 scripts/audit_apex_export.py <export folder>`: flags item names written with `@` in conditions, duplicate end-user aliases, raw database names used as headings, `select *` sources, pages with no access protection, grids with edit on but no save process, and regions with no search.
    - Run `scripts/schema_checks.sql` in SQLcl against the schema: tables without a primary key, editable tables without audit columns, UUID columns, `when others then null`, hardcoded literals that look like ids, objects that are invalid.
+2b. **Check against the company conventions file** (`apex-oracle-conventions.md`): turn each rule it states (naming, audit columns, error code ranges, commit policy, glossary) into a check and report breaches. No file: audit against the defaults and say so.
 3. **Read the page as a user** with `apex-ux` and its checklist (`../apex-ux/references/ux-checklist.md`). Scripts catch syntax; only a person notices that a heading is confusing.
 4. **Check the logic** with `oracle-plsql` and `oracle-design`: keys, error handling, commits, rules stored as data, one runnable test.
 5. **Verify deployed behaviour against the dictionary**, for example `apex_application_page_regions` for conditions and `apex_application_page_proc` for processes.

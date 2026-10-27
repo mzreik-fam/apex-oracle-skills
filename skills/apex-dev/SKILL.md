@@ -5,6 +5,10 @@ description: Build, change, validate and deploy Oracle APEX applications from co
 
 # Oracle APEX development
 
+## Company conventions (read first)
+
+Look for `apex-oracle-conventions.md` in the project root (also `docs/` and `.claude/`). If it exists, read the sections relevant to the task and follow them: where it differs from a default below, **the company file wins**. If it does not exist, use the defaults in this skill and mention once that the `conventions-setup` skill can create the file.
+
 APEX apps are edited by two parties: you in source files, and other people in the browser (headings, columns, inline CSS, saved reports). Importing source replaces the whole app, so anything a person changed in the browser and you did not export is silently lost. Most of this skill exists to prevent that.
 
 ## 1. Check versions first
@@ -43,7 +47,7 @@ The notes in `references/` were written for APEX 26.1 and Oracle Database 26ai. 
 - New tables or a data model: use `oracle-design`.
 - Before telling anyone it is finished: use `apex-audit`.
 
-## 5. Rules that keep teams out of trouble
+## 5. Default rules (the company conventions file may change them)
 
 - Develop on the dev environment first. Do not import into production, or push to a shared branch, without the owner's explicit OK in the conversation.
 - Change only what was asked. If you notice something else, report it separately.

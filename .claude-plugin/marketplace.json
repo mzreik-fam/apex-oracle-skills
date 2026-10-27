@@ -5,7 +5,7 @@
     {
       "name": "apex-oracle-skills",
       "source": "./",
-      "description": "Oracle APEX and database skills: apex-dev, apex-ux, oracle-plsql, oracle-design, apex-audit."
+      "description": "Oracle APEX and database skills: apex-dev, apex-ux, oracle-plsql, oracle-design, apex-audit, conventions-setup."
     }
   ]
 }

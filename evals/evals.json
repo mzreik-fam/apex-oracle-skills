@@ -68,6 +68,18 @@
         "reports findings by severity with evidence and a one-line fix",
         "states what was not checked"
       ]
+    },
+    {
+      "id": 7,
+      "skill": "conventions-setup",
+      "prompt": "Set up our conventions. We use Oracle APEX and a dev, test and prod database.",
+      "expectations": [
+        "looks for an existing conventions file first",
+        "infers naming and audit columns from the schema before asking",
+        "asks short rounds of questions with a default for each",
+        "writes apex-oracle-conventions.md at the project root without secrets",
+        "says which sections are still open and tells the team to commit the file"
+      ]
     }
   ]
 }

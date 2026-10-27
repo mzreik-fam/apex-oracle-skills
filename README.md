@@ -10,9 +10,22 @@ Skills that make an AI coding assistant a careful Oracle APEX and Oracle Databas
 | **apex-ux** | Making screens clear for end users: headings, filters, locked versus editable fields, grid versus report, dialogs. Includes a checklist. |
 | **oracle-plsql** | Packages, procedures, triggers, scripts, JSON and HTML in PL/SQL, ORA- and PLS- errors. |
 | **oracle-design** | Analysis and data model before building: keys, duplicates, raw data, rules as data. |
+| **conventions-setup** | Setting up your own company rules once (naming, audit columns, environments, approvals, wording). All other skills then follow them. |
 | **apex-audit** | Review before release: scripted checks on the live APEX export and the schema, plus a report format. |
 
 The assistant picks the right skill from what you ask. You can also name one: "use apex-audit on this app".
+
+## Make it follow your company rules (do this once per team)
+
+Every company names things and approves releases differently. The skills ship with sensible defaults; your own rules live in one file in **your** project repository, so the whole team shares them.
+
+1. After installing, ask your assistant: **"set up our conventions"** (it uses the `conventions-setup` skill). It reads your database and project to guess your naming, then asks a few short questions with a default for each.
+2. It writes `apex-oracle-conventions.md` in your project root. Commit it.
+3. From then on every skill looks for that file first and follows it. Where it differs from a default, your file wins. `apex-audit` checks your work against it.
+
+Prefer to fill it by hand? Copy `skills/conventions-setup/templates/conventions.template.md` to `apex-oracle-conventions.md` in your project and edit it. To change a rule later, edit the file (or ask the assistant to).
+
+You can also fork this repository and edit the defaults in the skills if you want your company-wide changes to apply to every project.
 
 ## Install (Claude Code), 2 commands
 
