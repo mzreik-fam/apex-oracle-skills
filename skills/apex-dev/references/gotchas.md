@@ -7,6 +7,7 @@ Each entry is something that cost time. Format: symptom, cause, fix.
 - **The app is renamed to the connection name after import.** `apex import -name` sets the application name. Pass the real name (for example `Locations`).
 - **ORA-17274 when importing through the SQLcl MCP tool.** That connection forces autocommit on. Use the SQLcl command line with `set autocommit off`.
 - **People's browser edits vanish after an import.** The import replaces the whole app. Export the live app first, compare, merge (workflow in SKILL.md).
+- **A person removed, moved or renamed something you built.** That is a decision, not a bug. Keep their version, do not re-add the column or heading, and mention it in your summary.
 - **Private saved reports and personal column choices reset on every import.** They are not in the export. Warn users before deploying; for a column choice that must survive, define it in the page's primary saved report (`displayColumn`).
 - **ORA-00001 on `WWV_FLOW_INTERACTIVE_GRIDS` (`IG_PK`) during import.** Caused by wrapping toolbar settings in an `attributes ( ... )` child of a grid. Put `toolbar`, `edit` directly in the region. If it persists, rename the region id.
 - **`DUPLICATED_COMPONENT ... endUserAlias` on validate.** Interactive report columns need unique end-user aliases; an export taken after a browser edit can contain duplicates. Assign a free alias.

@@ -25,7 +25,7 @@ The notes in `references/` were written for APEX 26.1 and Oracle Database 26ai. 
 ## 2. The deploy workflow (never skip the export)
 
 1. **Export the live app** to a dated folder: `apex export -applicationid <id> -exptype APEXLANG -dir backups/live-<time>`
-2. **Compare** the live export with your source for the pages you will touch (headings, columns, SQL, conditions, inline CSS, region names). Anything that differs is somebody's edit. Take the live file as the base and make your change on top of it.
+2. **Compare** the live export with your source: `python3 scripts/compare_live.py <live export folder> <source folder>`. It lists what differs in headings, column order, columns added or removed, queries, inline CSS, conditions, toolbar and pagination, items and processes. Anything it shows that you did not do yourself is somebody's edit. Take the live file as the base and make your change on top of it, and keep their choices: if a person removed, moved or renamed something you built, do not put it back without asking. After deploying, tell the user which of their edits you preserved.
 3. **Validate**: `apex validate -input <source dir> -workspace <workspace>`. Fix every error; warnings about slots usually mean a wrong slot name.
 4. **Import**: `set autocommit off`, then `apex import -input <source dir> -workspace <workspace> -name <APPLICATION NAME>`. The `-name` value becomes the application name shown in the header, so pass the real app name, never the SQLcl connection name.
 5. **Verify** against the dictionary, not by eye: `select region_name, condition_expression1 from apex_application_page_regions where application_id = <id> and page_id = <n>`.

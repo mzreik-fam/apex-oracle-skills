@@ -11,7 +11,7 @@
         "validates, then imports with set autocommit off from the SQLcl command line",
         "passes the application name (not the connection name) to apex import -name",
         "warns that private saved reports reset on import",
-        "checks the APEX and database version first"
+        "runs compare_live.py (or an equivalent comparison) and keeps edits people made in the browser","checks the APEX and database version first"
       ]
     },
     {

@@ -64,6 +64,7 @@ These instructions for non-Claude tools are not tested by the author. If your to
 ## How it works
 
 Each skill has a short `SKILL.md` (when to use it and the steps) and a `references/` folder the assistant opens only when needed, so it stays fast and focused. Scripts do the repeatable checks:
+- `skills/apex-dev/scripts/compare_live.py <live export> <source>` lists what people changed in the browser (headings, columns, queries, inline CSS, conditions) so you do not overwrite it.
 - `skills/apex-dev/scripts/deploy_safe.sh` exports the live app, asks you to compare, validates, then imports.
 - `skills/apex-audit/scripts/audit_apex_export.py <export folder>` checks an APEXlang export.
 - `skills/apex-audit/scripts/schema_checks.sql` checks the schema.
